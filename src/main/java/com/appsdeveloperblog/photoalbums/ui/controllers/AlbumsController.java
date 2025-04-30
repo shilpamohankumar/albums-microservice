@@ -33,6 +33,7 @@ public class AlbumsController {
 	@PostMapping
 	public Album createAlbum(@Valid @RequestBody Album album, Principal principal) {
 		album.setUserId(principal.getName());
+
 		return albumsService.createAlbum(album);
 	}
  
